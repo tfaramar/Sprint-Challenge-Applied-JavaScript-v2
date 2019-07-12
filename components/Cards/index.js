@@ -24,11 +24,31 @@ console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'));
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(object => {
-    const topicArr = object.data.articles
-    topicArr.forEach(article => {
-        cardContainer.appendChild(createCard(article))
+    const items = object.data.articles.bootstrap
+    console.log(items);
+    items.forEach(article => {
+        cardContainer.append(createCard(article))
     })
-
+    const jsitems = object.data.articles.javascript
+    console.log(jsitems);
+    jsitems.forEach(article => {
+        cardContainer.append(createCard(article))
+    })
+    const jqitems = object.data.articles.jquery
+    console.log(jqitems);
+    jqitems.forEach(article => {
+        cardContainer.append(createCard(article))
+    })
+    const techitems = object.data.articles.technology
+    console.log(techitems);
+    techitems.forEach(article => {
+        cardContainer.append(createCard(article))
+    })
+    const nodeitems = object.data.articles.node
+    console.log(nodeitems);
+    nodeitems.forEach(article => {
+        cardContainer.append(createCard(article))
+    })
 })
 .catch(error => {
     console.log('There was a problem fetching data from the Lambda Times Articles API')
@@ -50,7 +70,7 @@ function createCard(object){
     headline.textContent = object.headline;
     photo.src = object.authorPhoto;
     photo.alt = 'Photo of author';
-    credit.textContent = `By ${object.author.Name}`;
+    credit.textContent = `By ${object.authorName}`;
 
 
     card.appendChild(headline);
