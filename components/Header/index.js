@@ -29,9 +29,9 @@ function Header() {
     header.appendChild(temp);
 
     header.classList.add('header');
-    headerDate.classList.add('span', 'date');
+    headerDate.classList.add('date');
     title.classList.add('h1');
-    temp.classList.add('span', 'temp');
+    temp.classList.add('temp');
 
 
     return header;
