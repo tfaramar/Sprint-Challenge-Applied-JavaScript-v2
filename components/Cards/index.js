@@ -20,32 +20,32 @@
 
 const cardContainer = document.querySelector('.cards-container');
 
-console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'));
+//console.log(axios.get('https://lambda-times-backend.herokuapp.com/articles'));
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(object => {
     const items = object.data.articles.bootstrap
-    console.log(items);
+    //console.log(items);
     items.forEach(article => {
         cardContainer.append(createCard(article))
     })
     const jsitems = object.data.articles.javascript
-    console.log(jsitems);
+    //console.log(jsitems);
     jsitems.forEach(article => {
         cardContainer.append(createCard(article))
     })
     const jqitems = object.data.articles.jquery
-    console.log(jqitems);
+    //console.log(jqitems);
     jqitems.forEach(article => {
         cardContainer.append(createCard(article))
     })
     const techitems = object.data.articles.technology
-    console.log(techitems);
+    //console.log(techitems);
     techitems.forEach(article => {
         cardContainer.append(createCard(article))
     })
     const nodeitems = object.data.articles.node
-    console.log(nodeitems);
+    //console.log(nodeitems);
     nodeitems.forEach(article => {
         cardContainer.append(createCard(article))
     })
